@@ -194,3 +194,4 @@ C:\Users\rbueno\source\repos\LoginCriptografado\LoginCriptografado\bin\Debug\net
 C:\Users\rbueno\source\repos\LoginCriptografado\LoginCriptografado\obj\Debug\net10.0\LoginCri.F0301CC8.Up2Date
 C:\Users\rbueno\source\repos\LoginCriptografado\LoginCriptografado\bin\Debug\net10.0\runtimes\browser-wasm\nativeassets\net8.0\e_sqlite3.a
 C:\Users\rbueno\source\repos\LoginCriptografado\LoginCriptografado\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt
+C:\Users\rbueno\source\repos\LoginCriptografado\LoginCriptografado\bin\Debug\net10.0\BCrypt-Net-Next.dll
