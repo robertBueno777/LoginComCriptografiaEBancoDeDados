@@ -1,35 +1,37 @@
-﻿@{
+﻿@model UsuarioModel;
+@{
     ViewData["Title"] = "Home Page";
 }
 
 <div class="text-center">
     <h1 class="display-4">Cadastrar Usuario</h1>
 </div>
-<form>
+
+<form asp-action="CadastrarUsuario" asp-controller="Usuario" method="post">
     <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">Insira seu email...</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <label asp-for="EmailUsuario" class="form-label">Insira seu email...</label>
+        <input asp-for="EmailUsuario" type="email" class="form-control">
         <div id="emailHelp" class="form-text">Nunca compartilharemos seu e-mail com ninguém.</div>
     </div>
-
     <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">Insira seu nome completo...</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <label asp-for="NomeCompletoUsuario" class="form-label">Insira seu nome completo...</label>
+        <input asp-for="NomeCompletoUsuario" class="form-control">
     </div>
 
     <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">Nome de usuario...</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <label asp-for="NomeUsuario" class="form-label">Nome de usuario...</label>
+        <input asp-for="NomeUsuario" class="form-control">
     </div>
 
     <div class="mb-3">
-        <label for="exampleInputPassword1" class="form-label">Senha</label>
-        <input type="password" class="form-control" id="exampleInputPassword1">
+        <label asp-for="SenhaUsuario" class="form-label">Senha</label>
+        <input asp-for="SenhaUsuario" type="password" class="form-control">
     </div>
     <div class="mb-3">
-        <label for="exampleInputPassword1" class="form-label">Confirme sua senha</label>
-        <input type="password" class="form-control" id="exampleInputPassword1">
-    </div>
+        <label for="text" class="form-label">Confirme sua senha</label>
+        <input name="senhaConfirm" type="password" class="form-control" id="senhaConfirm">
+    </div> 
 
     <button type="submit" class="btn btn-primary">Cadastrar</button>
 </form>
+

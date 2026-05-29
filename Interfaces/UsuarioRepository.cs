@@ -1,11 +1,11 @@
 ﻿using LoginCriptografado.Models;
 
-namespace LoginCriptografado.Repository
+namespace LoginCriptografado.Interfaces
 {
     public interface IUsuarioRepository
     {
         public void CadastrarUsuario(UsuarioModel usuario);
-        public int BuscarPorId(int idUsuario);
+        public UsuarioModel? BuscarPorId(int idUsuario);
 
     }
 }

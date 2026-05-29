@@ -1,1 +1,141 @@
-﻿<a type="submit" class="btn btn-success" asp-controller="Usuario" asp-action="CadastrarUsuario">Fazer cadastro</a>
+﻿@* <a type="submit" class="btn btn-success" asp-controller="Usuario" asp-action="CadastrarUsuario">Fazer cadastro</a>
+ *@<!-- Copie e cole este bloco na sua View -->
+
+<div class="quadrado-login">
+    <form class="formulario-login">
+        <div class="grupo-campo">
+            <label for="text">E-mail</label>
+            <input type="text" id="email" name="text" placeholder="Digite seu e-mail" required />
+        </div>
+
+        <div class="grupo-campo">
+            <label for="password">Senha</label>
+            <input type="password" id="text" name="text" placeholder="Digite sua senha" required />
+        </div>
+        <button type="submit" class="botao-entrar">Entrar</button>
+        <label style="margin-bottom:8px" for="email">Não possui uma conta ?</label>
+    </form>
+    <a asp-controller="Usuario" asp-action="CadastrarUsuario" type="submit" class="botao-cadastrar">Criar Conta</a>
+</div>
+
+<style>
+    /* Estilos do Quadrado Rosa Claro */
+    .quadrado-login {
+      width: 350px;
+      padding: 30px;
+      background-color: #ffe4e1; /* Rosa claro (Misty Rose) */
+      border-radius: 15px;       /* Bordas levemente arredondadas */
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Sombra suave de fundo */
+      box-sizing: border-box;
+      font-family: sans-serif;
+    }
+
+    /* Estrutura do formulário */
+    .formulario-login {
+      display: flex;
+      flex-direction: column;
+      gap: 20px; /* Espaçamento entre os elementos */
+    }
+
+    /* Organização de cada campo (Label + Input) */
+    .grupo-campo {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    /* Estilo dos textos dos rótulos (Labels) */
+    .grupo-campo label {
+      font-size: 14px;
+      color: #555555;
+      font-weight: bold;
+    }
+
+    /* Estilo dos Campos Brancos de Entrada (Inputs) */
+    .grupo-campo input {
+      width: 100%;
+      padding: 12px;
+      background-color: #ffffff; /* Campos claramente brancos */
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      font-size: 14px;
+      color: #333333;
+      box-sizing: border-box;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    /* Efeito visual ao clicar no campo */
+    .grupo-campo input:focus {
+      border-color: #ffb6c1; /* Borda rosa um pouco mais escura no foco */
+    }
+
+    /* Estilo do Botão (Opcional, mas melhora o visual) */
+    .botao-entrar {
+      width: 100%;
+      padding: 12px;
+      background-color: #ffb6c1; /* Botão combinando com o tema */
+      color: #ffffff;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+    /* Efeito visual ao passar o mouse */
+    .botao-entrar:hover {
+        background-color: #ffa07a; /* Muda de cor igual ao botão Entrar */
+        color: #ffffff; /* Garante que o texto continue branco */
+    }
+
+    /* Pequeno efeito de clique (Feedback visual) */
+    .botao-entrar:active {
+        transform: scale(0.98); /* Dá uma leve afundada ao clicar */
+    }
+    .botao-cadastrar {
+        width: 100%;
+        padding: 12px;
+        background-color: #2E8B57; /* Botão combinando com o tema */
+        color: #ffffff;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.2s;
+    }
+
+    .botao-entrar:hover {
+      background-color: #ffa07a; /* Cor muda levemente ao passar o mouse */
+    }
+    /* Estilo do botão "Criar Conta" (Tag <a> estilizada como botão) */
+    .botao-cadastrar {
+        display: inline-flex; /* Permite aplicar margens, altura e flexbox */
+        align-items: center; /* Centraliza o texto verticalmente */
+        justify-content: center; /* Centraliza o texto horizontalmente */
+        width: 100%;
+        padding: 12px;
+        background-color: #2E8B57; /* Rosa igual ao botão Entrar */
+        color: #ffffff;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: bold;
+        text-decoration: none; /* Remove o sublinhado padrão de link */
+        text-align: center;
+        box-sizing: border-box;
+        transition: background-color 0.2s, transform 0.1s;
+        cursor: pointer;
+    }
+
+        /* Efeito visual ao passar o mouse */
+        .botao-cadastrar:hover {
+            background-color: #006400; /* Muda de cor igual ao botão Entrar */
+            color: #ffffff; /* Garante que o texto continue branco */
+        }
+
+        /* Pequeno efeito de clique (Feedback visual) */
+        .botao-cadastrar:active {
+            transform: scale(0.98); /* Dá uma leve afundada ao clicar */
+        }
+</style>
