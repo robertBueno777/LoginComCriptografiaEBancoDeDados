@@ -21,11 +21,15 @@ namespace LoginCriptografado.Controllers
         {
             return View(new UsuarioModel());
         }
+        public IActionResult Logado()
+        {
+            return View();
+        }
         [HttpPost]
         public IActionResult CadastrarUsuario(UsuarioModel usuarioModel, string senhaConfirm)
         {
             _usuarioService.CadastrarUsuario(usuarioModel, senhaConfirm);
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Login", "Home");
         }
     
     }

@@ -20,10 +20,9 @@ namespace LoginCriptografado.Services
             {
                 if (ConfirmarSenha(usuario, senhaConfirm) == true)
                 {                    
-                    Console.WriteLine("erro senhas não coincidem burro");
+                    Console.WriteLine("erro: senhas não coincidem, amigo");
                     return;
                 }
-
                 usuario.SenhaUsuario = BCrypt.Net.BCrypt.HashPassword(usuario.SenhaUsuario);
                 usuario.Login.SenhaUsuarioLogin = usuario.SenhaUsuario;
                 usuario.Login.EmailUsuarioLogin = usuario.EmailUsuario;
@@ -32,18 +31,18 @@ namespace LoginCriptografado.Services
             }
             return;
         }
-        public UsuarioModel? RealizarLogin(string emailUsuario, string senha)
+
+        public bool RealizarLogin(string emailUsuario, string senha)
         {
             var usuario = _iUsuarioRepository.BuscarPorEmail(emailUsuario);
-            var idUsu = usuario.Id;
-            if(senha != usuario.Login.SenhaUsuarioLogin)
+            if (BCrypt.Net.BCrypt.Verify(senha, usuario.SenhaUsuario))
             {
-                //senha.bcrypt.
-                Console.WriteLine("senha ou email não possuem cadastro no banco."); return null;
+                Console.WriteLine("senha ou email não possuem cadastro no banco.");
+                return true;
             }
-            return usuario;
+            return false;
         }
-       
+
         public bool ConfirmarSenha(UsuarioModel usuario, string senhaConfirm)
         {
             if (usuario.SenhaUsuario == senhaConfirm)
@@ -52,7 +51,6 @@ namespace LoginCriptografado.Services
             }
             return true;
         }
-
 
     }
 }

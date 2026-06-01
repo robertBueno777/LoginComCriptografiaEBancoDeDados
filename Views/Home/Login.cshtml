@@ -1,16 +1,18 @@
 ﻿@* <a type="submit" class="btn btn-success" asp-controller="Usuario" asp-action="CadastrarUsuario">Fazer cadastro</a>
  *@<!-- Copie e cole este bloco na sua View -->
 
+@using LoginCriptografado.Controllers;
+@model UsuarioModel;
 <div class="quadrado-login">
-    <form class="formulario-login">
+    <form asp-controller="Home" asp-action="Login" class="formulario-login" method="post">
         <div class="grupo-campo">
-            <label for="text">E-mail</label>
-            <input type="text" id="email" name="text" placeholder="Digite seu e-mail" required />
+            <label asp-for="EmailUsuario" for="text">E-mail</label>
+            <input asp-for="EmailUsuario" type="text" id="email" name="email" placeholder="Digite seu e-mail" required />
         </div>
 
         <div class="grupo-campo">
-            <label for="password">Senha</label>
-            <input type="password" id="text" name="text" placeholder="Digite sua senha" required />
+            <label asp-for="SenhaUsuario" for="password">Senha</label>
+            <input asp-for="SenhaUsuario" type="password" id="text" name="senha" placeholder="Digite sua senha" required />
         </div>
         <button type="submit" class="botao-entrar">Entrar</button>
         <label style="margin-bottom:8px" for="email">Não possui uma conta ?</label>
