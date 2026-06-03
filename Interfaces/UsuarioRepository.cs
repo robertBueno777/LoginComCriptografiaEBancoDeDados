@@ -6,7 +6,7 @@ namespace LoginCriptografado.Interfaces
     {
         public void CadastrarUsuario(UsuarioModel usuario);
         public UsuarioModel? BuscarPorId(int idUsuario);
-        public UsuarioModel? BuscarPorNome(string nomeUsuario);
+        public UsuarioModel? BuscarPorNomeUsuario(string nomeUsuario);
         public UsuarioModel? BuscarPorEmail(string emailUsuario);
 
     }

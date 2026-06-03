@@ -28,7 +28,11 @@ namespace LoginCriptografado.Controllers
         [HttpPost]
         public IActionResult CadastrarUsuario(UsuarioModel usuarioModel, string senhaConfirm)
         {
-            _usuarioService.CadastrarUsuario(usuarioModel, senhaConfirm);
+            TempData["MensagemCadastro"] = _usuarioService.CadastrarUsuario(usuarioModel, senhaConfirm);
+            if(TempData["MensagemCadastro"] != null)
+            {
+                return RedirectToAction("CadastrarUsuario", "Usuario");
+            }
             return RedirectToAction("Login", "Home");
         }
     

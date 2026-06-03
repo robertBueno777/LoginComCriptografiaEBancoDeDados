@@ -24,7 +24,7 @@ namespace LoginCriptografado.Repository
             var usuario = _appDbContext.Usuarios.Where(u => u.Id == idUsuario).Include(u => u.Login).FirstOrDefault();
             return usuario;
         }
-        public UsuarioModel? BuscarPorNome(string nomeUsuario)
+        public UsuarioModel? BuscarPorNomeUsuario(string nomeUsuario)
         {
             var usuario = _appDbContext.Usuarios.Where(u => u.NomeUsuario == nomeUsuario).Include(u => u.Login).FirstOrDefault();
             return usuario;

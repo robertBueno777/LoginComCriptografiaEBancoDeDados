@@ -33,5 +33,9 @@
     </div> 
 
     <button type="submit" class="btn btn-primary">Cadastrar</button>
-</form>
+    @if (TempData["MensagemCadastro"] != null)
+        {
+            @TempData["MensagemCadastro"]
+        }
+    </form>
 
