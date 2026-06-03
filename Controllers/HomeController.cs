@@ -21,8 +21,16 @@ namespace LoginCriptografado.Controllers
         [HttpPost]
         public IActionResult Login(string email, string senha)
         {
-            if(_usuarioService.RealizarLogin(email, senha) != true)
+            var mensagem = _usuarioService.ValidarLogin(email, senha);
+            if(mensagem != null)
             {
+                TempData["Mensagem"] = mensagem; 
+                return RedirectToAction("Login", "Home");
+
+            }
+            if (_usuarioService.RealizarLogin(email, senha) != true)
+            {
+                TempData["Mensagem"] = "Erro no login.";
                 return RedirectToAction("Login", "Home"); 
             }
             return RedirectToAction("Logado", "Usuario");

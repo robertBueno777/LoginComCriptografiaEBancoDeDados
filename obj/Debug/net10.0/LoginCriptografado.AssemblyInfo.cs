@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LoginCriptografado")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e53132dd0d0f5220c5f55bb3e77494d7d028f082")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2f8da5abc5da93a7e3c82e5dca37b7a7dfe91bfc")]
 [assembly: System.Reflection.AssemblyProductAttribute("LoginCriptografado")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LoginCriptografado")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
